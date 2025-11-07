@@ -54,6 +54,7 @@ export enum SHORTCUT_NAMES {
   LIST_SHORTCUTS = 'list_shortcuts',
   CLEAN_UP = 'clean_up_workspace',
   START_MOVE = 'start_move',
+  READ_CURRENT_BLOCK = 'read_current_block',
 }
 
 export const SHORTCUT_NAMES_TO_DISPLAY_TEXT: Record<string, string> = {

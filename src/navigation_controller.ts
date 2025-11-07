@@ -35,6 +35,7 @@ import {MoveActions} from './actions/move';
 import {COMMIT_MOVE_SHORTCUT, Mover} from './actions/mover';
 import {DuplicateAction} from './actions/duplicate';
 import {StackNavigationAction} from './actions/stack_navigation';
+import { WhereAmIAction } from './actions/where_am_i';
 
 const KeyCodes = BlocklyUtils.KeyCodes;
 
@@ -75,6 +76,8 @@ export class NavigationController {
   moveActions = new MoveActions(this.mover);
 
   stackNavigationAction: StackNavigationAction = new StackNavigationAction();
+
+  whereAmIAction = new WhereAmIAction();
 
   constructor(
     private options: {allowCrossWorkspacePaste: boolean} = {
@@ -260,6 +263,7 @@ export class NavigationController {
     this.moveActions.install();
     this.shortcutDialog.install();
     this.stackNavigationAction.install();
+    this.whereAmIAction.install();
 
     // Initialize the shortcut modal with available shortcuts.  Needs
     // to be done separately rather at construction, as many shortcuts
